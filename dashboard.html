@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardCraft - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <h1>CardCraft</h1>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="templates.html" class="nav-link">Templates</a>
+                <a href="editor.html" class="nav-link">Editor</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+            </nav>
+            <div class="header-buttons">
+                <div class="avatar-dropdown">
+                    <div class="avatar">
+                        <img src="https://via.placeholder.com/40x40?text=U" alt="User Avatar">
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#edit-profile">Edit Profile</a>
+                        <a href="#logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="dashboard-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link active">
+                    <span class="icon">🏠</span>
+                    <span class="text">Dashboard</span>
+                </a>
+                <a href="mydesigns.html" class="sidebar-link">
+                    <span class="icon">🎨</span>
+                    <span class="text">My Designs</span>
+                </a>
+                <a href="templates.html" class="sidebar-link">
+                    <span class="icon">📄</span>
+                    <span class="text">Templates</span>
+                </a>
+                <a href="subscriptions.html" class="sidebar-link">
+                    <span class="icon">💳</span>
+                    <span class="text">Subscriptions</span>
+                </a>
+                <a href="support.html" class="sidebar-link">
+                    <span class="icon">🆘</span>
+                    <span class="text">Support</span>
+                </a>
+                <a href="profile.html" class="sidebar-link">
+                    <span class="icon">👤</span>
+                    <span class="text">Profile</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="active-plan-display">
+                    💎 Active Plan: <span id="active-plan-name">Free</span>
+                </div>
+                <h2>My Designs 🎨</h2>
+                <button class="new-design-btn">+ New Design</button>
+            </header>
+
+            <!-- Designs Grid -->
+            <div class="designs-grid">
+                <!-- Sample Design Cards -->
+                <div class="design-card">
+                    <div class="card-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            <span>Wedding Card</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Wedding Invitation</h3>
+                        <p>Edited 2 days ago</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn edit">Edit</button>
+                        <button class="action-btn download">Download</button>
+                        <button class="action-btn delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="design-card">
+                    <div class="card-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            <span>Birthday Card</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Birthday Surprise</h3>
+                        <p>Edited 1 week ago</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn edit">Edit</button>
+                        <button class="action-btn download">Download</button>
+                        <button class="action-btn delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="design-card">
+                    <div class="card-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            <span>Business Card</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Corporate Invite</h3>
+                        <p>Edited 3 days ago</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn edit">Edit</button>
+                        <button class="action-btn download">Download</button>
+                        <button class="action-btn delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="design-card">
+                    <div class="card-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            <span>Anniversary Card</span>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Anniversary Celebration</h3>
+                        <p>Edited 5 days ago</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn edit">Edit</button>
+                        <button class="action-btn download">Download</button>
+                        <button class="action-btn delete">Delete</button>
+                    </div>
+                </div>
+
+                <!-- Empty State (commented out, can be toggled) -->
+                <!-- <div class="empty-state">
+                    <div class="empty-illustration">🎨</div>
+                    <h3>No designs yet</h3>
+                    <p>Start creating your first card!</p>
+                    <button class="create-btn">Create Card</button>
+                </div> -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="ad-banner">
+                <div class="ad-placeholder">
+                    <p>Advertisement</p>
+                    <div class="ad-space">728x90 Banner Ad</div>
+                </div>
+            </div>
+            <div class="app-version">
+                <p>CardCraft v1.0.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Set active sidebar link based on current page and display active plan
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Display active plan from localStorage
+            const activePlan = localStorage.getItem('activePlan') || 'Free';
+            const planNameElement = document.getElementById('active-plan-name');
+            if (planNameElement) {
+                planNameElement.textContent = activePlan;
+            }
+
+            // Hide premium features for Free plan
+            if (activePlan === 'Free') {
+                const downloadButtons = document.querySelectorAll('.action-btn.download');
+                downloadButtons.forEach(button => {
+                    button.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

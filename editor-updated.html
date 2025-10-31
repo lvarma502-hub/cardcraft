@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardCraft - Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <h1>CardCraft</h1>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="templates.html" class="nav-link">Templates</a>
+                <a href="editor.html" class="nav-link active">Editor</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+            </nav>
+            <div class="header-buttons">
+                <a href="login.html" class="btn-outline">Login</a>
+                <a href="landing.html" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Toolbar -->
+    <div class="floating-toolbar">
+        <button class="toolbar-btn" title="Undo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="toolbar-btn" title="Redo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 7v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 17a9 9 0 009-9 9 9 0 006 2.3L21 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="toolbar-separator"></div>
+        <button class="toolbar-btn" title="Align Left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                <line x1="3" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="3" y1="18" x2="18" y2="18" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+        <button class="toolbar-btn" title="Align Center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                <line x1="6" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="4" y1="18" x2="20" y2="18" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+        <button class="toolbar-btn" title="Align Right">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                <line x1="9" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="6" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+        <div class="toolbar-separator"></div>
+        <button class="toolbar-btn" title="Upload Image">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/>
+                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="editor-layout">
+        <!-- Left Sidebar: Tools -->
+        <aside class="sidebar left-sidebar">
+            <div class="sidebar-header">
+                <h3>Tools</h3>
+            </div>
+            <div class="tools-list">
+                <button class="tool-btn active" title="Text">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 7h16M4 12h10M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Text</span>
+                </button>
+                <button class="tool-btn" title="Elements">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="m21 15-3.086-3.086a2 2 0 00-2.828 0L6 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Elements</span>
+                </button>
+                <button class="tool-btn" title="Upload">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Upload</span>
+                </button>
+                <button class="tool-btn" title="Templates">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="7" y="7" width="3" height="3" stroke="currentColor" stroke-width="2"/>
+                        <rect x="14" y="7" width="3" height="3" stroke="currentColor" stroke-width="2"/>
+                        <rect x="7" y="14" width="3" height="3" stroke="currentColor" stroke-width="2"/>
+                        <rect x="14" y="14" width="3" height="3" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Templates</span>
+                </button>
+                <button class="tool-btn" title="Background">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Background</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Center Canvas -->
+        <main class="canvas-container">
+            <div class="canvas-wrapper">
+                <div id="card-canvas" class="canvas">
+                    <!-- Canvas will be populated by JavaScript -->
+                </div>
+                <!-- Zoom Controls -->
+                <div class="zoom-controls">
+                    <button class="zoom-btn">-</button>
+                    <span>100%</span>
+                    <button class="zoom-btn">+</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar: Properties -->
+        <aside class="sidebar right-sidebar">
+            <div class="sidebar-header">
+                <h3>Properties</h3>
+            </div>
+            <div class="properties-panel">
+                <div class="property-group">
+                    <label>Color</label>
+                    <input type="color" value="#ff1e56">
+                </div>
+                <div class="property-group">
+                    <label>Font</label>
+                    <select>
+                        <option>Poppins</option>
+                        <option>Inter</option>
+                        <option>Arial</option>
+                    </select>
+                </div>
+                <div class="property-group">
+                    <label>Size</label>
+                    <input type="range" min="10" max="100" value="24">
+                </div>
+                <div class="property-group">
+                    <label>Alignment</label>
+                    <div class="alignment-btns">
+                        <button>Left</button>
+                        <button>Center</button>
+                        <button>Right</button>
+                    </div>
+                </div>
+                <div class="property-group">
+                    <label>Shadow</label>
+                    <input type="checkbox">
+                </div>
+                <div class="property-group">
+                    <label>Layers</label>
+                    <div class="layers-list">
+                        <div class="layer-item">Text 1</div>
+                        <div class="layer-item">Image 1</div>
+                        <div class="layer-item">Background</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="btn-secondary">Preview</button>
+        <button class="btn-primary">Save Design</button>
+    </div>
+
+    <script src="templates-data.js"></script>
+    <script src="editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardCraft - Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="editor-updated.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <h1>CardCraft</h1>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="templates.html" class="nav-link">Templates</a>
+                <a href="editor.html" class="nav-link active">Editor</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+            </nav>
+            <div class="header-buttons">
+                <a href="login.html" class="btn-outline">Login</a>
+                <a href="landing.html" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Toolbar -->
+    <div class="floating-toolbar">
+        <button class="toolbar-btn" id="undo-btn" title="Undo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="toolbar-btn" id="redo-btn" title="Redo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 7v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 17a9 9 0 009-9 9 9 0 006 2.3L21 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="toolbar-separator"></div>
+        <button class="toolbar-btn" id="align-left" title="Align Left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                <line x1="3" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="3" y1="18" x2="18" y2="18" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+        <button class="toolbar-btn" id="align-center" title="Align Center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                <line x1="6" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="4" y1="18" x2="20" y2="18" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+        <button class="toolbar-btn" id="align-right" title="Align Right">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                <line x1="9" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"/>
+                <line x1="6" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+        <div class="toolbar-separator"></div>
+        <button class="toolbar-btn" id="upload-image" title="Upload Image">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/>
+                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="editor-layout">
+        <!-- Left Sidebar: Tools -->
+        <aside class="sidebar left-sidebar">
+            <div class="sidebar-header">
+                <h3>Tools</h3>
+            </div>
+            <div class="tools-list">
+                <button class="tool-btn active" data-tool="text" title="Text">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 7h16M4 12h10M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Text</span>
+                </button>
+                <button class="tool-btn" data-tool="elements" title="Elements">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="m21 15-3.086-3.086a2 2 0 00-2.828 0L6 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Elements</span>
+                </button>
+                <button class="tool-btn" data-tool="upload" title="Upload">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Upload</span>
+                </button>
+                <button class="tool-btn" data-tool="templates" title="Templates">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="7" y="7" width="3" height="3" stroke="currentColor" stroke-width="2"/>
+                        <rect x="14" y="7" width="3" height="3" stroke="currentColor" stroke-width="2"/>
+                        <rect x="7" y="14" width="3" height="3" stroke="currentColor" stroke-width="2"/>
+                        <rect x="14" y="14" width="3" height="3" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Templates</span>
+                </button>
+                <button class="tool-btn" data-tool="background" title="Background">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Background</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Center Canvas -->
+        <main class="canvas-container">
+            <div class="canvas-wrapper">
+                <div class="canvas" id="canvas">
+                    <div class="card-preview" id="card-preview">
+                        <!-- Template elements will be loaded here -->
+                    </div>
+                </div>
+                <!-- Zoom Controls -->
+                <div class="zoom-controls">
+                    <button class="zoom-btn" id="zoom-out">-</button>
+                    <span id="zoom-level">100%</span>
+                    <button class="zoom-btn" id="zoom-in">+</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar: Properties -->
+        <aside class="sidebar right-sidebar">
+            <div class="sidebar-header">
+                <h3>Properties</h3>
+            </div>
+            <div class="properties-panel">
+                <div class="property-group">
+                    <label>Text Content</label>
+                    <textarea id="text-content" placeholder="Enter your text here..." rows="3"></textarea>
+                </div>
+                <div class="property-group">
+                    <label>Font Size</label>
+                    <input type="range" id="font-size" min="12" max="72" value="24">
+                    <span id="font-size-value">24px</span>
+                </div>
+                <div class="property-group">
+                    <label>Color</label>
+                    <input type="color" id="text-color" value="#ffffff">
+                </div>
+                <div class="property-group">
+                    <label>Font Family</label>
+                    <select id="font-family">
+                        <option value="Poppins">Poppins</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Verdana">Verdana</option>
+                    </select>
+                </div>
+                <div class="property-group">
+                    <label>Alignment</label>
+                    <div class="alignment-btns">
+                        <button id="align-left-btn">Left</button>
+                        <button id="align-center-btn">Center</button>
+                        <button id="align-right-btn">Right</button>
+                    </div>
+                </div>
+                <div class="property-group">
+                    <label>Position</label>
+                    <div class="position-controls">
+                        <div class="position-input">
+                            <label>X:</label>
+                            <input type="number" id="pos-x" min="0" max="100" value="50">
+                        </div>
+                        <div class="position-input">
+                            <label>Y:</label>
+                            <input type="number" id="pos-y" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="btn-secondary" id="save-btn">Save</button>
+        <button class="btn-secondary" id="preview-btn">Preview</button>
+        <button class="btn-primary" id="download-btn">Download</button>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-preview">&times;</span>
+            <div class="modal-preview">
+                <div class="modal-card" id="modal-card">
+                    <!-- Preview content will be cloned here -->
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary" id="edit-from-preview">Continue Editing</button>
+                    <button class="btn-secondary" id="download-from-preview">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden file input for image upload -->
+    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+
+    <script src="templates-data.js"></script>
+    <script>
+        class CardEditor {
+            constructor() {
+                this.canvas = document.getElementById('canvas');
+                this.cardPreview = document.getElementById('card-preview');
+                this.selectedElement = null;
+                this.history = [];
+                this.historyIndex = -1;
+                this.zoom = 1;
+                this.templateData = null;
+
+                this.init();
+            }
+
+            init() {
+                this.loadTemplate();
+                this.setupEventListeners();
+                this.setupToolbar();
+                this.setupPropertiesPanel();
+                this.setupActionButtons();
+            }
+
+            loadTemplate() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const templateId = urlParams.get('id');
+
+                if (templateId) {
+                    this.templateData = getTemplateById(templateId);
+                    if (this.templateData) {
+                        this.applyTemplate();
+                        localStorage.setItem('selectedTemplate', JSON.stringify(this.templateData));
+                    }
+                } else {
+                    const saved = localStorage.getItem('selectedTemplate');
+                    if (saved) {
+                        this.templateData = JSON.parse(saved);
+                        this.applyTemplate();
+                    }
+                }
+            }
+
+            applyTemplate() {
+                if (!this.templateData) return;
+
+                // Set background
+                this.cardPreview.style.backgroundImage = this.templateData.design.background;
+                this.cardPreview.style.backgroundSize = 'cover';
+                this.cardPreview.style.backgroundPosition = 'center';
+
+                // Clear existing elements
+                this.cardPreview.innerHTML = '';
+
+                // Add template elements
+                if (this.templateData.design.elements) {
+                    this.templateData.design.elements.forEach((element, index) => {
+                        this.createElement(element, index);
+                    });
+                }
+
+                // Add default editable fields if none exist
+                if (!this.templateData.design.elements || this.templateData.design.elements.length === 0) {
+                    this.addDefaultFields();
+                }
+
+                this.saveState();
+            }
+
+            createElement(elementData, index) {
+                const element = document.createElement('div');
+                element.className = 'editor-element text-element';
+                element.style.position = 'absolute';
+                element.style.left = elementData.x + '%';
+                element.style.top = elementData.y + '%';
+                element.style.fontSize = elementData.fontSize || '24px';
+                element.style.color = elementData.color || '#ffffff';
+                element.style.fontFamily = elementData.fontFamily || 'Poppins';
+                element.style.textAlign = elementData.alignment || 'center';
+                element.textContent = elementData.content || 'Edit this text';
+                element.dataset.index = index;
+
+                this.makeElementEditable(element);
+                this.cardPreview.appendChild(element);
+            }
+
+            addDefaultFields() {
+                const fields = [
+                    { content: 'You\'re Invited', x: 50, y: 20, fontSize: '2rem' },
+                    { content: 'Name', x: 50, y: 35, fontSize: '1.5rem' },
+                    { content: 'Date: [Date]', x: 50, y: 50, fontSize: '1.2rem' },
+                    { content: 'Time: [Time]', x: 50, y: 60, fontSize: '1.2rem' },
+                    { content: 'Venue: [Venue]', x: 50, y: 70, fontSize: '1.2rem' }
+                ];
+
+                fields.forEach((field, index) => {
+                    const element = {
+                        type: 'text',
+                        content: field.content,
+                        x: field.x,
+                        y: field.y,
+                        fontSize: field.fontSize,
+                        color: '#ffffff',
+                        fontFamily: 'Poppins',
+                        alignment: 'center'
+                    };
+                    this.createElement(element, index);
+                });
+            }
+
+            makeElementEditable(element) {
+                element.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.selectElement(element);
+                });
+
+                element.addEventListener('dblclick', (e) => {
+                    e.stopPropagation();
+                    this.editElement(element);
+                });
+
+                // Make draggable
+                let isDragging = false;
+                let startX, startY, startLeft, startTop;
+
+                element.addEventListener('mousedown', (e) => {
+                    if (e.target !== element) return;
+                    isDragging = true;
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    const rect = element.getBoundingClientRect();
+                    const canvasRect = this.canvas.getBoundingClientRect();
+                    startLeft = rect.left - canvasRect.left;
+                    startTop = rect.top - canvasRect.top;
+                    element.style.cursor = 'grabbing';
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    const canvasRect = this.canvas.getBoundingClientRect();
+                    const newLeft = startLeft + (e.clientX - startX);
+                    const newTop = startTop + (e.clientY - startY);
+
+                    const maxLeft = canvasRect.width - element.offsetWidth;
+                    const maxTop = canvasRect.height - element.offsetHeight;
+
+                    element.style.left = Math.max(0, Math.min(maxLeft, newLeft)) + 'px';
+                    element.style.top = Math.max(0, Math.min(maxTop, newTop)) + 'px';
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        element.style.cursor = 'grab';
+                        this.saveState();
+                    }
+                });
+            }
+
+            selectElement(element) {
+                // Remove selection from other elements
+                document.querySelectorAll('.editor-element').forEach(el => {
+                    el.classList.remove('selected');
+                });
+
+                // Select this element
+                element.classList.add('selected');
+                this.selectedElement = element;
+
+                // Update properties panel
+                this.updatePropertiesPanel(element);
+            }
+
+            editElement(element) {
+                const currentText = element.textContent;
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.value = currentText;
+                input.style.width = '100%';
+                input.style.fontSize = element.style.fontSize;
+                input.style.fontFamily = element.style.fontFamily;
+                input.style.color = element.style.color;
+                input.style.background = 'rgba(255, 255, 255, 0.9)';
+                input.style.border = 'none';
+                input.style.outline = 'none';
+
+                element.textContent = '';
+                element.appendChild(input);
+                input.focus();
+                input.select();
+
+                const finishEdit = () => {
+                    element.textContent = input.value || 'Edit this text';
+                    this.saveState();
+                };
+
+                input.addEventListener('blur', finishEdit);
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        finishEdit();
+                    } else if (e.key === 'Escape') {
+                        element.textContent = currentText;
+                    }
+                });
+            }
+
+            updatePropertiesPanel(element) {
+                const textContent = document.getElementById('text-content');
+                const fontSize = document.getElementById('font-size');
+                const textColor = document.getElementById('text-color');
+                const fontFamily = document.getElementById('font-family');
+                const posX = document.getElementById('pos-x');
+                const posY = document.getElementById('pos-y');
+
+                textContent.value = element.textContent;
+                fontSize.value = parseInt(element.style.fontSize);
+                document.getElementById('font-size-value').textContent = element.style.fontSize;
+                textColor.value = element.style.color;
+                fontFamily.value = element.style.fontFamily;
+
+                const rect = element.getBoundingClientRect();
+                const canvasRect = this.canvas.getBoundingClientRect();
+                posX.value = Math.round((rect.left - canvasRect.left) / canvasRect.width * 100);
+                posY.value = Math.round((rect.top - canvasRect.top) / canvasRect.height * 100);
+            }
+
+            setupEventListeners() {
+                // Canvas click to deselect
+                this.canvas.addEventListener('click', () => {
+                    document.querySelectorAll('.editor-element').forEach(el => {
+                        el.classList.remove('selected');
+                    });
+                    this.selectedElement = null;
+                });
+            }
+
+            setupToolbar() {
+                // Tool buttons
+                document.querySelectorAll('.tool-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        const tool = btn.dataset.tool;
+                        this.activateTool(tool);
+                    });
+                });
+
+                // Alignment buttons
+                document.getElementById('align-left').addEventListener('click', () => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.textAlign = 'left';
+                        this.saveState();
+                    }
+                });
+
+                document.getElementById('align-center').addEventListener('click', () => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.textAlign = 'center';
+                        this.saveState();
+                    }
+                });
+
+                document.getElementById('align-right').addEventListener('click', () => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.textAlign = 'right';
+                        this.saveState();
+                    }
+                });
+
+                // Image upload
+                document.getElementById('upload-image').addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            this.addImageElement(e.target.result);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                document.getElementById('upload-image').addEventListener('click', () => {
+                    document.getElementById('image-upload').click();
+                });
+            }
+
+            setupPropertiesPanel() {
+                // Text content
+                document.getElementById('text-content').addEventListener('input', (e) => {
+                    if (this.selectedElement) {
+                        this.selectedElement.textContent = e.target.value;
+                        this.saveState();
+                    }
+                });
+
+                // Font size
+                document.getElementById('font-size').addEventListener('input', (e) => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.fontSize = e.target.value + 'px';
+                        document.getElementById('font-size-value').textContent = e.target.value + 'px';
+                        this.saveState();
+                    }
+                });
+
+                // Text color
+                document.getElementById('text-color').addEventListener('input', (e) => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.color = e.target.value;
+                        this.saveState();
+                    }
+                });
+
+                // Font family
+                document.getElementById('font-family').addEventListener('change', (e) => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.fontFamily = e.target.value;
+                        this.saveState();
+                    }
+                });
+
+                // Alignment buttons
+                document.getElementById('align-left-btn').addEventListener('click', () => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.textAlign = 'left';
+                        this.saveState();
+                    }
+                });
+
+                document.getElementById('align-center-btn').addEventListener('click', () => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.textAlign = 'center';
+                        this.saveState();
+                    }
+                });
+
+                document.getElementById('align-right-btn').addEventListener('click', () => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.textAlign = 'right';
+                        this.saveState();
+                    }
+                });
+
+                // Position
+                document.getElementById('pos-x').addEventListener('input', (e) => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.left = e.target.value + '%';
+                        this.saveState();
+                    }
+                });
+
+                document.getElementById('pos-y').addEventListener('input', (e) => {
+                    if (this.selectedElement) {
+                        this.selectedElement.style.top = e.target.value + '%';
+                        this.saveState();
+                    }
+                });
+            }
+
+            setupActionButtons() {
+                // Save
+                document.getElementById('save-btn').addEventListener('click', () => {
+                    this.saveDesign();
+                });
+
+                // Preview
+                document.getElementById('preview-btn').addEventListener('click', () => {
+                    this.showPreview();
+                });
+
+                // Download
+                document.getElementById('download-btn').addEventListener('click', () => {
+                    this.downloadCard();
+                });
+
+                // Preview modal
+                document.getElementById('close-preview').addEventListener('click', () => {
+                    document.getElementById('preview-modal').style.display = 'none';
+                });
+
+                document.getElementById('edit-from-preview').addEventListener('click', () => {
+                    document.getElementById('preview-modal').style.display = 'none';
+                });
+
+                document.getElementById('download-from-preview').addEventListener('click', () => {
+                    this.downloadCard();
+                    document.getElementById('preview-modal').style.display = 'none';
+                });
+
+                // Close modal when clicking outside
+                window.addEventListener('click', (e) => {
+                    const modal = document.getElementById('preview-modal');
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            }
+
+            activateTool(tool) {
+                switch (tool) {
+                    case 'text':
+                        this.addTextElement();
+                        break;
+                    case 'upload':
+                        document.getElementById('image-upload').click();
+                        break;
+                }
+            }
+
+            addTextElement() {
+                const element = {
+                    type: 'text',
+                    content: 'New Text',
+                    x: 50,
+                    y: 50,
+                    fontSize: '24px',
+                    color: '#ffffff',
+                    fontFamily: 'Poppins',
+                    alignment: 'center'
+                };
+                this.createElement(element, Date.now());
+                this.saveState();
+            }
+
+            addImageElement(src) {
+                const element = document.createElement('div');
+                element.className = 'editor-element image-element';
+                element.style.position = 'absolute';
+                element.style.left = '50%';
+                element.style.top = '50%';
+                element.style.transform = 'translate(-50%, -50%)';
+                element.style.width = '100px';
+                element.style.height = '100px';
+
+                const img = document.createElement('img');
+                img.src = src;
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+
+                element.appendChild(img);
+                this.cardPreview.appendChild(element);
+                this.makeElementEditable(element);
+                this.saveState();
+            }
+
+            saveState() {
+                const state = this.cardPreview.innerHTML;
+                this.history = this.history.slice(0, this.historyIndex + 1);
+                this.history.push(state);
+                this.historyIndex = this.history.length - 1;
+
+                // Limit history to 50 states
+                if (this.history.length > 50) {
+                    this.history.shift();
+                    this.historyIndex--;
+                }
+            }
+
+            undo() {
+                if (this.historyIndex > 0) {
+                    this.historyIndex--;
+                    this.cardPreview.innerHTML = this.history[this.historyIndex];
+                    this.rebindElements();
+                }
+            }
+
+            redo() {
+                if (this.historyIndex < this.history.length - 1) {
+                    this.historyIndex++;
+                    this.cardPreview.innerHTML = this.history[this.historyIndex];
+                    this.rebindElements();
+                }
+            }
+
+            rebindElements() {
+                const elements = this.cardPreview.querySelectorAll('.editor-element');
+                elements.forEach(element => {
+                    this.makeElementEditable(element);
+                });
+            }
+
+            saveDesign() {
+                const design = {
+                    background: this.cardPreview.style.backgroundImage,
+                    elements: []
+                };
+
+                const elements = this.cardPreview.querySelectorAll('.editor-element');
+                elements.forEach((element, index) => {
+                    const rect = element.getBoundingClientRect();
+                    const canvasRect = this.canvas.getBoundingClientRect();
+
+                    design.elements.push({
+                        type: element.classList.contains('text-element') ? 'text' : 'image',
+                        content: element.textContent,
+                        x: Math.round((rect.left - canvasRect.left) / canvasRect.width * 100),
+                        y: Math.round((rect.top - canvasRect.top) / canvasRect.height * 100),
+                        fontSize: element.style.fontSize,
+                        color: element.style.color,
+                        fontFamily: element.style.fontFamily,
+                        alignment: element.style.textAlign
+                    });
+                });
+
+                localStorage.setItem('savedDesign', JSON.stringify(design));
+                this.showNotification('Design saved successfully!', 'success');
+            }
+
+            showPreview() {
+                const modal = document.getElementById('preview-modal');
+                const modalCard = document.getElementById('modal-card');
+
+                // Clone the card preview
+                modalCard.innerHTML = this.cardPreview.innerHTML;
+                modalCard.style.backgroundImage = this.cardPreview.style.backgroundImage;
+                modalCard.style.backgroundSize = 'cover';
+                modalCard.style.backgroundPosition = 'center';
+
+                modal.style.display = 'block';
+            }
+
+            async downloadCard() {
+                try {
+                    const canvas = await html2canvas(this.cardPreview, {
+                        backgroundColor: null,
+                        scale: 2
+                    });
+
+                    const link = document.createElement('a');
+                    link.download = 'cardcraft-invitation.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+
+                    this.showNotification('Card downloaded successfully!', 'success');
+                } catch (error) {
+                    console.error('Download failed:', error);
+                    this.showNotification('Download failed. Please try again.', 'error');
+                }
+            }
+
+            showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+        }
+
+        // Initialize editor when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const editor = new CardEditor();
+
+            // Setup undo/redo buttons
+            document.getElementById('undo-btn').addEventListener('click', () => editor.undo());
+            document.getElementById('redo-btn').addEventListener('click', () => editor.redo());
+
+            // Setup zoom controls
+            document.getElementById('zoom-in').addEventListener('click', () => {
+                editor.zoom = Math.min(editor.zoom + 0.1, 2);
+                editor.updateZoom();
+            });
+
+            document.getElementById('zoom-out').addEventListener('click', () => {
+                editor.zoom = Math.max(editor.zoom - 0.1, 0.5);
+                editor.updateZoom();
+            });
+        });
+
+        // Add zoom method to CardEditor class
+        CardEditor.prototype.updateZoom = function() {
+            const zoomLevel = document.getElementById('zoom-level');
+            zoomLevel.textContent = Math.round(this.zoom * 100) + '%';
+            this.canvas.style.transform = `scale(${this.zoom})`;
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+Design a modern, creative 404 Error page for a web app called CardCraft (a premium invitation design platform).
+
+Main Goal:
+Keep it elegant, friendly, and on-brand — not boring or plain.
+
+Layout Details:
+
+Hero Section:
+
+Big text: “404 — Page Not Found”
+
+Subtext: “Oops! The page you’re looking for doesn’t exist or was moved.”
+
+Illustration idea:
+🎨 A designer’s desk with a broken paper or lost invitation card floating away
+OR
+🧭 A confused character holding an invitation map.
+
+Action Buttons:
+
+“Go Home” (primary — gold or pastel pink button)
+
+“Contact Support” (secondary — outline button)
+
+Background / Visuals:
+
+Soft gradient or pastel pattern (like invitation theme).
+
+Floating icons (balloons, envelopes, ribbons).
+
+Alternative Mode:
+
+Use same design style for “Under Maintenance” mode:
+Text: “We’re polishing your experience ✨ Please check back soon.”
+
+Font & Colors:
+
+Font: Poppins or Inter
+
+Accent: Gold (#f6c90e) or Blush Pink (#ff8ab3)
+
+Background: white or very light beige (#fffaf5).
+
+Extra:
+
+Include brand logo (CardCraft) in top center.
+
+Keep responsive layout (centered vertically & horizontally)./* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Header Section */
+.header {
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.header-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Main Content */
+.main-content {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 60px;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 0 0 250px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.toc-link {
+    text-decoration: none;
+    color: #666;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.toc-link:hover, .toc-link.active {
+    color: #f6c90e;
+}
+
+/* Content */
+.content {
+    flex: 1;
+}
+
+.content section {
+    margin-bottom: 50px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid #f6c90e;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.content p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.content ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.content li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.content strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.contact-info {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #eee;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+    background: #f9f9f9;
+    padding: 40px 0 20px;
+    border-top: 1px solid #eee;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-info p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: #f6c90e;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #333;
+}
+
+.ad-banner {
+    flex: 1;
+    max-width: 728px;
+}
+
+.ad-placeholder {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.ad-placeholder p {
+    color: #999;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.ad-space {
+    background: #f0f0f0;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        gap: 40px;
+    }
+
+    .sidebar {
+        flex: 0 0 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 60px 20px;
+    }
+
+    .header-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .sidebar {
+        position: static;
+        order: -1;
+    }
+
+    .sidebar nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .toc-link {
+        border: none;
+        padding: 10px;
+        text-align: center;
+        background: #f9f9f9;
+        border-radius: 6px;
+    }
+
+    .content section {
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 1.3rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .ad-banner {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .sidebar nav {
+        grid-template-columns: 1fr;
+    }
+
+    .toc-link {
+        text-align: left;
+    }
+
+    .content section {
+        border-radius: 8px;
+        padding: 15px;
+    }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Print styles */
+@media print {
+    .sidebar, .ad-banner, .header-watermark {
+        display: none;
+    }
+
+    .content {
+        max-width: none;
+    }
+
+    .content section {
+        page-break-inside: avoid;
+        background: #ffffff !important;
+        border: 1px solid #ddd;
+    }
+}

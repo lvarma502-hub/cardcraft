@@ -1,0 +1,294 @@
+{
+  "templates": [
+    {
+      "id": "wedding-01",
+      "title": "Elegant Wedding Invitation",
+      "description": "Premium gold and white design",
+      "category": "wedding",
+      "thumbnail": "https://via.placeholder.com/400x300?text=Elegant+Wedding",
+      "canvasLayers": [
+        {
+          "id": "background",
+          "type": "background",
+          "src": "https://via.placeholder.com/800x600?text=Wedding+Background",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600
+        },
+        {
+          "id": "text-1",
+          "type": "text",
+          "content": "You're Invited",
+          "x": 400,
+          "y": 150,
+          "fontSize": 32,
+          "fontFamily": "Poppins",
+          "color": "#ffffff",
+          "align": "center"
+        },
+        {
+          "id": "text-2",
+          "type": "text",
+          "content": "Join us for our special celebration",
+          "x": 400,
+          "y": 200,
+          "fontSize": 18,
+          "fontFamily": "Poppins",
+          "color": "#ffffff",
+          "align": "center"
+        },
+        {
+          "id": "image-1",
+          "type": "image",
+          "src": "https://via.placeholder.com/200x200?text=Floral+Element",
+          "x": 300,
+          "y": 250,
+          "width": 200,
+          "height": 200,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "birthday-01",
+      "title": "Fun Birthday Card",
+      "description": "Bright colors and playful fonts",
+      "category": "birthday",
+      "thumbnail": "https://via.placeholder.com/400x300?text=Fun+Birthday",
+      "canvasLayers": [
+        {
+          "id": "background",
+          "type": "background",
+          "src": "https://via.placeholder.com/800x600?text=Birthday+Background",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600
+        },
+        {
+          "id": "text-1",
+          "type": "text",
+          "content": "Happy Birthday!",
+          "x": 400,
+          "y": 150,
+          "fontSize": 36,
+          "fontFamily": "Poppins",
+          "color": "#ff69b4",
+          "align": "center"
+        },
+        {
+          "id": "text-2",
+          "type": "text",
+          "content": "From: Your Friends",
+          "x": 400,
+          "y": 200,
+          "fontSize": 20,
+          "fontFamily": "Poppins",
+          "color": "#ffffff",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "anniversary-01",
+      "title": "Romantic Anniversary",
+      "description": "Rose accents and elegant script",
+      "category": "anniversary",
+      "thumbnail": "https://via.placeholder.com/400x300?text=Romantic+Anniversary",
+      "canvasLayers": [
+        {
+          "id": "background",
+          "type": "background",
+          "src": "https://via.placeholder.com/800x600?text=Anniversary+Background",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600
+        },
+        {
+          "id": "text-1",
+          "type": "text",
+          "content": "Happy Anniversary",
+          "x": 400,
+          "y": 150,
+          "fontSize": 32,
+          "fontFamily": "Poppins",
+          "color": "#ff1493",
+          "align": "center"
+        },
+        {
+          "id": "text-2",
+          "type": "text",
+          "content": "Celebrating our love",
+          "x": 400,
+          "y": 200,
+          "fontSize": 18,
+          "fontFamily": "Poppins",
+          "color": "#ffffff",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "baby-kids-01",
+      "title": "Baby Shower Celebration",
+      "description": "Sweet and adorable baby shower design",
+      "category": "baby-kids",
+      "thumbnail": "https://via.placeholder.com/400x300?text=Baby+Shower",
+      "canvasLayers": [
+        {
+          "id": "background",
+          "type": "background",
+          "src": "https://via.placeholder.com/800x600?text=Baby+Shower+Background",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600
+        },
+        {
+          "id": "text-1",
+          "type": "text",
+          "content": "Baby Shower",
+          "x": 400,
+          "y": 150,
+          "fontSize": 32,
+          "fontFamily": "Poppins",
+          "color": "#ffb6c1",
+          "align": "center"
+        },
+        {
+          "id": "text-2",
+          "type": "text",
+          "content": "Godh Bharai Ceremony",
+          "x": 400,
+          "y": 200,
+          "fontSize": 18,
+          "fontFamily": "Poppins",
+          "color": "#ffffff",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "party-01",
+      "title": "Party Invitation",
+      "description": "Vibrant and energetic party design",
+      "category": "party",
+      "thumbnail": "https://via.placeholder.com/400x300?text=Party+Invitation",
+      "canvasLayers": [
+        {
+          "id": "background",
+          "type": "background",
+          "src": "https://via.placeholder.com/800x600?text=Party+Background",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600
+        },
+        {
+          "id": "text-1",
+          "type": "text",
+          "content": "Party Time!",
+          "x": 400,
+          "y": 150,
+          "fontSize": 36,
+          "fontFamily": "Poppins",
+          "color": "#32cd32",
+          "align": "center"
+        },
+        {
+          "id": "text-2",
+          "type": "text",
+          "content": "Join the celebration",
+          "x": 400,
+          "y": 200,
+          "fontSize": 20,
+          "fontFamily": "Poppins",
+          "color": "#ffffff",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "greeting-cards-01",
+      "title": "Thank You Card",
+      "description": "Gracious thank you message design",
+      "category": "greeting-cards",
+      "thumbnail": "https://via.placeholder.com/400x300?text=Thank+You+Card",
+      "canvasLayers": [
+        {
+          "id": "background",
+          "type": "background",
+          "src": "https://via.placeholder.com/800x600?text=Thank+You+Background",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600
+        },
+        {
+          "id": "text-1",
+          "type": "text",
+          "content": "Thank You",
+          "x": 400,
+          "y": 150,
+          "fontSize": 32,
+          "fontFamily": "Poppins",
+          "color": "#ffd700",
+          "align": "center"
+        },
+        {
+          "id": "text-2",
+          "type": "text",
+          "content": "For everything",
+          "x": 400,
+          "y": 200,
+          "fontSize": 18,
+          "fontFamily": "Poppins",
+          "color": "#ffffff",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "trending-01",
+      "title": "Trending Minimalist Design",
+      "description": "Clean and modern minimalist template",
+      "category": "trending",
+      "thumbnail": "https://via.placeholder.com/400x300?text=Minimalist+Design",
+      "canvasLayers": [
+        {
+          "id": "background",
+          "type": "background",
+          "src": "https://via.placeholder.com/800x600?text=Minimalist+Background",
+          "x": 0,
+          "y": 0,
+          "width": 800,
+          "height": 600
+        },
+        {
+          "id": "text-1",
+          "type": "text",
+          "content": "Minimalist",
+          "x": 400,
+          "y": 150,
+          "fontSize": 32,
+          "fontFamily": "Poppins",
+          "color": "#000000",
+          "align": "center"
+        },
+        {
+          "id": "text-2",
+          "type": "text",
+          "content": "Clean & Simple",
+          "x": 400,
+          "y": 200,
+          "fontSize": 18,
+          "fontFamily": "Poppins",
+          "color": "#666666",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardCraft - Templates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="templates.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <h1>CardCraft</h1>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="templates.html" class="nav-link active">Templates</a>
+                <a href="editor.html" class="nav-link">Editor</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+            </nav>
+            <div class="header-buttons">
+                <div class="avatar-dropdown">
+                    <div class="avatar">
+                        <img src="https://via.placeholder.com/40x40?text=U" alt="User Avatar">
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#edit-profile">Edit Profile</a>
+                        <a href="#logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="dashboard-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="icon">🏠</span>
+                    <span class="text">Dashboard</span>
+                </a>
+                <a href="mydesigns.html" class="sidebar-link">
+                    <span class="icon">🎨</span>
+                    <span class="text">My Designs</span>
+                </a>
+                <a href="templates.html" class="sidebar-link active">
+                    <span class="icon">📄</span>
+                    <span class="text">Templates</span>
+                </a>
+                <a href="subscriptions.html" class="sidebar-link">
+                    <span class="icon">💳</span>
+                    <span class="text">Subscriptions</span>
+                </a>
+                <a href="support.html" class="sidebar-link">
+                    <span class="icon">🆘</span>
+                    <span class="text">Support</span>
+                </a>
+                <a href="profile.html" class="sidebar-link">
+                    <span class="icon">👤</span>
+                    <span class="text">Profile</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Create Beautiful Invitations Instantly ✨</h1>
+            <p>Choose from our premium collection of invitation card templates</p>
+        </div>
+        <div class="floating-cards">
+            <div class="card-3d card1">
+                <div class="card-inner">
+                    <div class="card-front">Wedding</div>
+                    <div class="card-back"></div>
+                </div>
+            </div>
+            <div class="card-3d card2">
+                <div class="card-inner">
+                    <div class="card-front">Birthday</div>
+                    <div class="card-back"></div>
+                </div>
+            </div>
+            <div class="card-3d card3">
+                <div class="card-inner">
+                    <div class="card-front">Anniversary</div>
+                    <div class="card-back"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Tabs -->
+    <section class="categories">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab active" data-category="wedding">Wedding</button>
+                <button class="tab" data-category="birthday">Birthday</button>
+                <button class="tab" data-category="anniversary">Anniversary</button>
+                <button class="tab" data-category="festival">Festival</button>
+                <button class="tab" data-category="baby-shower">Baby Shower</button>
+                <button class="tab" data-category="business-event">Business Event</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Grid -->
+    <section class="template-grid">
+        <div class="container">
+            <div class="grid">
+                <!-- Template 1 -->
+                <div class="template-card">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Elegant Wedding Invitation</h3>
+                        <p>Premium gold and white design</p>
+                    </div>
+                </div>
+                <!-- Template 2 -->
+                <div class="template-card">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Fun Birthday Card</h3>
+                        <p>Bright colors and playful fonts</p>
+                    </div>
+                </div>
+                <!-- Template 3 -->
+                <div class="template-card">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Romantic Anniversary</h3>
+                        <p>Rose accents and elegant script</p>
+                    </div>
+                </div>
+                <!-- Template 4 -->
+                <div class="template-card">
+                    <div class="card-image">
+                        <div class="placeholder-template festival"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Festival Celebration</h3>
+                        <p>Vibrant colors and festive motifs</p>
+                    </div>
+                </div>
+
+                <!-- Wedding Templates -->
+                <div class="template-card wedding-category">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding-traditional"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Traditional Indian Wedding</h3>
+                        <p>Rich red and gold with mandala patterns</p>
+                    </div>
+                </div>
+                <div class="template-card wedding-category">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding-modern"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Modern Indian Wedding</h3>
+                        <p>Contemporary design with floral motifs</p>
+                    </div>
+                </div>
+                <div class="template-card wedding-category">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding-south"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>South Indian Wedding</h3>
+                        <p>Traditional South Indian motifs and colors</p>
+                    </div>
+                </div>
+                <div class="template-card wedding-category">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding-punjabi"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Punjabi Wedding</h3>
+                        <p>Bold colors with traditional Punjabi elements</p>
+                    </div>
+                </div>
+                <div class="template-card wedding-category">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding-bengali"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Bengali Wedding</h3>
+                        <p>Elegant white with red accents</p>
+                    </div>
+                </div>
+                <div class="template-card wedding-category">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding-marathi"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Marathi Wedding</h3>
+                        <p>Traditional Marathi wedding motifs</p>
+                    </div>
+                </div>
+                <div class="template-card wedding-category">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding-gujarati"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Gujarati Wedding</h3>
+                        <p>Intricate Gujarati patterns and designs</p>
+                    </div>
+                </div>
+                <div class="template-card wedding-category">
+                    <div class="card-image">
+                        <div class="placeholder-template wedding-rajasthani"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Rajasthani Wedding</h3>
+                        <p>Royal Rajasthani colors and motifs</p>
+                    </div>
+                </div>
+
+                <!-- Birthday Templates -->
+                <div class="template-card birthday-category">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday-traditional"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Traditional Indian Birthday</h3>
+                        <p>Classic Indian birthday celebrations</p>
+                    </div>
+                </div>
+                <div class="template-card birthday-category">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday-modern"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Modern Indian Birthday</h3>
+                        <p>Contemporary Indian birthday themes</p>
+                    </div>
+                </div>
+                <div class="template-card birthday-category">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday-kids"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Kids Birthday Indian Style</h3>
+                        <p>Fun Indian themes for children's birthdays</p>
+                    </div>
+                </div>
+                <div class="template-card birthday-category">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday-adult"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Adult Birthday Indian</h3>
+                        <p>Elegant Indian designs for adults</p>
+                    </div>
+                </div>
+                <div class="template-card birthday-category">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday-60th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>60th Birthday Indian</h3>
+                        <p>Special milestone celebration</p>
+                    </div>
+                </div>
+                <div class="template-card birthday-category">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday-50th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>50th Birthday Indian</h3>
+                        <p>Golden jubilee celebration</p>
+                    </div>
+                </div>
+                <div class="template-card birthday-category">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday-25th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>25th Birthday Indian</h3>
+                        <p>Silver jubilee celebration</p>
+                    </div>
+                </div>
+                <div class="template-card birthday-category">
+                    <div class="card-image">
+                        <div class="placeholder-template birthday-18th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>18th Birthday Indian</h3>
+                        <p>Coming of age celebration</p>
+                    </div>
+                </div>
+
+                <!-- Anniversary Templates -->
+                <div class="template-card anniversary-category">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary-traditional"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Traditional Indian Anniversary</h3>
+                        <p>Classic Indian anniversary themes</p>
+                    </div>
+                </div>
+                <div class="template-card anniversary-category">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary-modern"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Modern Indian Anniversary</h3>
+                        <p>Contemporary Indian designs</p>
+                    </div>
+                </div>
+                <div class="template-card anniversary-category">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary-1st"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>1st Anniversary Indian</h3>
+                        <p>Paper anniversary celebration</p>
+                    </div>
+                </div>
+                <div class="template-card anniversary-category">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary-5th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>5th Anniversary Indian</h3>
+                        <p>Wooden anniversary celebration</p>
+                    </div>
+                </div>
+                <div class="template-card anniversary-category">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary-10th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>10th Anniversary Indian</h3>
+                        <p>Tin anniversary celebration</p>
+                    </div>
+                </div>
+                <div class="template-card anniversary-category">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary-25th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>25th Anniversary Indian</h3>
+                        <p>Silver anniversary celebration</p>
+                    </div>
+                </div>
+                <div class="template-card anniversary-category">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary-50th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>50th Anniversary Indian</h3>
+                        <p>Golden anniversary celebration</p>
+                    </div>
+                </div>
+                <div class="template-card anniversary-category">
+                    <div class="card-image">
+                        <div class="placeholder-template anniversary-60th"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>60th Anniversary Indian</h3>
+                        <p>Diamond anniversary celebration</p>
+                    </div>
+                </div>
+
+                <!-- Festival Templates -->
+                <div class="template-card festival-category">
+                    <div class="card-image">
+                        <div class="placeholder-template festival-diwali"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Diwali Celebration</h3>
+                        <p>Festival of lights with traditional motifs</p>
+                    </div>
+                </div>
+                <div class="template-card festival-category">
+                    <div class="card-image">
+                        <div class="placeholder-template festival-holi"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Holi Celebration</h3>
+                        <p>Color festival with vibrant designs</p>
+                    </div>
+                </div>
+                <div class="template-card festival-category">
+                    <div class="card-image">
+                        <div class="placeholder-template festival-dussehra"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Dussehra Celebration</h3>
+                        <p>Victory of good over evil</p>
+                    </div>
+                </div>
+                <div class="template-card festival-category">
+                    <div class="card-image">
+                        <div class="placeholder-template festival-durga-puja"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Durga Puja Celebration</h3>
+                        <p>Bengali festival of goddess Durga</p>
+                    </div>
+                </div>
+                <div class="template-card festival-category">
+                    <div class="card-image">
+                        <div class="placeholder-template festival-rakshabandhan"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Rakshabandhan Celebration</h3>
+                        <p>Sacred bond between siblings</p>
+                    </div>
+                </div>
+                <div class="template-card festival-category">
+                    <div class="card-image">
+                        <div class="placeholder-template festival-ganesh-chaturthi"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Ganesh Chaturthi Celebration</h3>
+                        <p>Festival of Lord Ganesha</p>
+                    </div>
+                </div>
+                <div class="template-card festival-category">
+                    <div class="card-image">
+                        <div class="placeholder-template festival-navratri"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Navratri Celebration</h3>
+                        <p>Nine nights of celebration</p>
+                    </div>
+                </div>
+                <div class="template-card festival-category">
+                    <div class="card-image">
+                        <div class="placeholder-template festival-eid"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Eid Celebration</h3>
+                        <p>Muslim festival of breaking fast</p>
+                    </div>
+                </div>
+
+                <!-- Baby Shower Templates -->
+                <div class="template-card baby-shower-category">
+                    <div class="card-image">
+                        <div class="placeholder-template baby-shower-traditional"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Traditional Indian Baby Shower</h3>
+                        <p>Godh Bharai ceremony invitation</p>
+                    </div>
+                </div>
+                <div class="template-card baby-shower-category">
+                    <div class="card-image">
+                        <div class="placeholder-template baby-shower-modern"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Modern Indian Baby Shower</h3>
+                        <p>Contemporary baby shower designs</p>
+                    </div>
+                </div>
+                <div class="template-card baby-shower-category">
+                    <div class="card-image">
+                        <div class="placeholder-template baby-shower-boy"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Baby Boy Shower Indian</h3>
+                        <p>Blue and traditional motifs for boys</p>
+                    </div>
+                </div>
+                <div class="template-card baby-shower-category">
+                    <div class="card-image">
+                        <div class="placeholder-template baby-shower-girl"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Baby Girl Shower Indian</h3>
+                        <p>Pink and elegant designs for girls</p>
+                    </div>
+                </div>
+                <div class="template-card baby-shower-category">
+                    <div class="card-image">
+                        <div class="placeholder-template baby-shower-twin"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Twin Baby Shower Indian</h3>
+                        <p>Special celebration for twins</p>
+                    </div>
+                </div>
+                <div class="template-card baby-shower-category">
+                    <div class="card-image">
+                        <div class="placeholder-template baby-shower-naming"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Naming Ceremony Indian</h3>
+                        <p>Traditional naming ceremony invitation</p>
+                    </div>
+                </div>
+                <div class="template-card baby-shower-category">
+                    <div class="card-image">
+                        <div class="placeholder-template baby-shower-annaprasan"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Annaprasan Ceremony Indian</h3>
+                        <p>First rice feeding ceremony</p>
+                    </div>
+                </div>
+                <div class="template-card baby-shower-category">
+                    <div class="card-image">
+                        <div class="placeholder-template baby-shower-baby-wear"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Baby Wear Ceremony Indian</h3>
+                        <p>Traditional baby clothing ceremony</p>
+                    </div>
+                </div>
+
+                <!-- Business Event Templates -->
+                <div class="template-card business-event-category">
+                    <div class="card-image">
+                        <div class="placeholder-template business-event-corporate"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Corporate Event Indian</h3>
+                        <p>Professional business invitations</p>
+                    </div>
+                </div>
+                <div class="template-card business-event-category">
+                    <div class="card-image">
+                        <div class="placeholder-template business-event-seminar"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Seminar Invitation Indian</h3>
+                        <p>Educational seminar announcements</p>
+                    </div>
+                </div>
+                <div class="template-card business-event-category">
+                    <div class="card-image">
+                        <div class="placeholder-template business-event-conference"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Conference Invitation Indian</h3>
+                        <p>Professional conference announcements</p>
+                    </div>
+                </div>
+                <div class="template-card business-event-category">
+                    <div class="card-image">
+                        <div class="placeholder-template business-event-product-launch"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Product Launch Indian</h3>
+                        <p>New product introduction events</p>
+                    </div>
+                </div>
+                <div class="template-card business-event-category">
+                    <div class="card-image">
+                        <div class="placeholder-template business-event-awards"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Awards Ceremony Indian</h3>
+                        <p>Recognition and achievement events</p>
+                    </div>
+                </div>
+                <div class="template-card business-event-category">
+                    <div class="card-image">
+                        <div class="placeholder-template business-event-networking"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Networking Event Indian</h3>
+                        <p>Professional networking gatherings</p>
+                    </div>
+                </div>
+                <div class="template-card business-event-category">
+                    <div class="card-image">
+                        <div class="placeholder-template business-event-workshop"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Workshop Invitation Indian</h3>
+                        <p>Interactive learning sessions</p>
+                    </div>
+                </div>
+                <div class="template-card business-event-category">
+                    <div class="card-image">
+                        <div class="placeholder-template business-event-exhibition"></div>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="edit-btn">Edit Now</button>
+                        <button class="preview-btn">Preview</button>
+                    </div>
+                    <div class="card-info">
+                        <h3>Exhibition Invitation Indian</h3>
+                        <p>Trade and cultural exhibitions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#terms">Terms</a>
+                    <a href="#privacy">Privacy</a>
+                </div>
+                <div class="footer-ads">
+                    <!-- AdSense-friendly space -->
+                    <div class="ad-placeholder">
+                        <p>Advertisement</p>
+                        <div class="ad-space">728x90 Banner Ad</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CardCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Preview Modal -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-preview">
+                <div class="modal-card">
+                    <div class="modal-card-front">
+                        <h2>You're Invited</h2>
+                        <p>Join us for our special celebration</p>
+                        <div class="modal-card-details">
+                            <p>Date: [Date]</p>
+                            <p>Time: [Time]</p>
+                            <p>Venue: [Venue]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="window.location.href='editor.html'">Edit This Template</button>
+                    <button class="btn-secondary">Download</button>
+                    <button class="btn-secondary">Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="templates-data.js"></script>
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('preview-modal');
+        const closeBtn = document.querySelector('.close-modal');
+
+        // Function to generate unique ID for each template card
+        function assignTemplateIds() {
+            const cards = document.querySelectorAll('.template-card');
+            const categories = ['wedding', 'birthday', 'anniversary', 'festival', 'baby-shower', 'business-event'];
+
+            let idCounter = 1;
+            cards.forEach((card, index) => {
+                const category = categories[Math.floor(index / 8)] || 'general';
+                const templateId = `${category}-${String(idCounter).padStart(2, '0')}`;
+                card.setAttribute('data-template-id', templateId);
+                idCounter++;
+            });
+        }
+
+        // Add functionality to Edit Now buttons
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const card = e.target.closest('.template-card');
+                const templateId = card.getAttribute('data-template-id');
+                if (templateId) {
+                    // Store template data in localStorage
+                    const template = getTemplateById(templateId);
+                    if (template) {
+                        localStorage.setItem('selectedTemplate', JSON.stringify(template));
+                    }
+                    // Redirect to editor with template ID
+                    window.location.href = `editor.html?id=${templateId}`;
+                } else {
+                    window.location.href = 'editor.html';
+                }
+            });
+        });
+
+        // Add functionality to Preview buttons
+        document.querySelectorAll('.preview-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Get the template card that was clicked
+                const card = e.target.closest('.template-card');
+                const templateId = card.getAttribute('data-template-id');
+                const title = card.querySelector('.card-info h3').textContent;
+                const description = card.querySelector('.card-info p').textContent;
+
+                // Update modal content
+                modal.querySelector('.modal-card-front h2').textContent = title;
+                modal.querySelector('.modal-card-front p').textContent = description;
+
+                // Update modal buttons with template ID
+                const editBtn = modal.querySelector('.btn-primary');
+                if (templateId) {
+                    editBtn.onclick = () => {
+                        const template = getTemplateById(templateId);
+                        if (template) {
+                            localStorage.setItem('selectedTemplate', JSON.stringify(template));
+                        }
+                        window.location.href = `editor.html?id=${templateId}`;
+                    };
+                } else {
+                    editBtn.onclick = () => window.location.href = 'editor.html';
+                }
+
+                // Show modal
+                modal.style.display = 'block';
+            });
+        });
+
+        // Close modal when clicking X
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Initialize template IDs on page load
+        document.addEventListener('DOMContentLoaded', assignTemplateIds);
+
+        // Set active sidebar link based on current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

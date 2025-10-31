@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardCraft - Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+    <!-- Top Bar: Breadcrumb -->
+    <header class="top-bar">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="#home">Home</a> >
+                <a href="#wedding">Wedding</a> >
+                <span>Elegant Floral Card</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Preview Layout -->
+    <main class="preview-layout">
+        <!-- Left Sidebar: Similar Templates -->
+        <aside class="left-sidebar">
+            <h3>You may also like</h3>
+            <div class="thumbnails">
+                <div class="thumbnail">
+                    <div class="thumb-image"></div>
+                    <p>Rose Garden</p>
+                </div>
+                <div class="thumbnail">
+                    <div class="thumb-image"></div>
+                    <p>Golden Elegance</p>
+                </div>
+                <div class="thumbnail">
+                    <div class="thumb-image"></div>
+                    <p>Blush Romance</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center: Card Preview -->
+        <section class="center-preview">
+            <div class="preview-background">
+                <div class="card-preview">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <h2>You're Invited</h2>
+                            <p>Join us for our special day</p>
+                            <div class="card-details">
+                                <p>Date: June 15, 2024</p>
+                                <p>Time: 4:00 PM</p>
+                                <p>Venue: Grand Ballroom</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="fullscreen-btn" title="Preview in full screen">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 21H3v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 3l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Sidebar: Card Details -->
+        <aside class="right-sidebar">
+            <div class="card-info">
+                <h1>Elegant Floral Card</h1>
+                <p>A beautiful wedding invitation featuring delicate floral patterns and elegant gold accents. Perfect for your special celebration.</p>
+                <div class="action-buttons">
+                    <button class="btn-primary">Edit This Template</button>
+                    <button class="btn-secondary">Download</button>
+                    <button class="btn-secondary">Share</button>
+                    <button class="btn-secondary">Print</button>
+                </div>
+                <p class="customize-text">Customize this card in our free editor within seconds.</p>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Bottom: Ad Banner -->
+    <section class="ad-banner">
+        <div class="container">
+            <div class="ad-placeholder">
+                <p>Advertisement</p>
+                <div class="ad-space">728x90 Banner Ad</div>
+            </div>
+        </div>
+    </section>
+
+    <script src="templates-data.js"></script>
+    <script>
+        // Function to get URL parameter
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to load template into preview
+        function loadTemplatePreview(templateId) {
+            const template = getTemplateById(templateId);
+            if (!template) {
+                // Show error message for invalid template
+                const cardPreview = document.querySelector('.card-preview');
+                if (cardPreview) {
+                    cardPreview.innerHTML = `
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: #666;">
+                            <h2>Template not found</h2>
+                            <p>The requested template could not be loaded.</p>
+                            <a href="templates.html" style="color: #ff1e56; text-decoration: none; margin-top: 20px;">← Back to Templates</a>
+                        </div>
+                    `;
+                }
+                return;
+            }
+
+            // Update breadcrumb
+            const breadcrumb = document.querySelector('.breadcrumb');
+            if (breadcrumb) {
+                breadcrumb.innerHTML = `
+                    <a href="index.html">Home</a> >
+                    <a href="templates.html">Templates</a> >
+                    <span>${template.title}</span>
+                `;
+            }
+
+            // Update card info
+            const cardInfo = document.querySelector('.card-info');
+            if (cardInfo) {
+                cardInfo.querySelector('h1').textContent = template.title;
+                cardInfo.querySelector('p').textContent = template.description;
+            }
+
+            // Apply template design to preview
+            const cardPreview = document.querySelector('.card-preview .card-content .card-front');
+            if (cardPreview && template.design) {
+                // Apply background to parent container
+                const previewBackground = document.querySelector('.preview-background');
+                if (previewBackground && template.design.background) {
+                    previewBackground.style.background = template.design.background;
+                }
+
+                // Clear existing elements and add template elements
+                const existingElements = cardPreview.querySelectorAll('.card-element');
+                existingElements.forEach(el => el.remove());
+
+                // Add template elements
+                if (template.design.elements) {
+                    template.design.elements.forEach(element => {
+                        const el = document.createElement('div');
+                        el.className = 'card-element text-element';
+                        el.style.position = 'absolute';
+                        el.style.left = element.x + '%';
+                        el.style.top = element.y + '%';
+                        el.style.fontSize = element.fontSize;
+                        el.style.color = element.color;
+                        el.textContent = element.content;
+                        cardPreview.appendChild(el);
+                    });
+                }
+            }
+
+            // Update page title
+            document.title = `CardCraft - Preview ${template.title}`;
+        }
+
+        // Initialize preview on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const templateId = getUrlParameter('id');
+
+            if (templateId) {
+                loadTemplatePreview(templateId);
+            } else {
+                // Show default preview or error
+                const cardPreview = document.querySelector('.card-preview .card-content .card-front');
+                if (cardPreview) {
+                    cardPreview.innerHTML = `
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: #666;">
+                            <h2>No Template Selected</h2>
+                            <p>Please select a template to preview.</p>
+                            <a href="templates.html" style="color: #ff1e56; text-decoration: none; margin-top: 20px;">← Browse Templates</a>
+                        </div>
+                    `;
+                }
+            }
+        });
+
+        // Preview functionality will be expanded here
+    </script>
+</body>
+</html>

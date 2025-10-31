@@ -1,0 +1,866 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Navigation */
+.top-nav {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo .logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #e3b04b, #ff5c8d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 25px;
+    padding: 8px 16px;
+    border: 1px solid #e9ecef;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #e3b04b;
+    color: #e3b04b;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #e3b04b;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #e3b04b, #ff5c8d);
+    border: none;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(227, 176, 75, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(227, 176, 75, 0.4);
+}
+
+.lang-toggle {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #666;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+    background: #e3b04b;
+    color: #ffffff;
+}
+
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #e3b04b, #ff5c8d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.floating-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-3d {
+    width: 200px;
+    height: 280px;
+    perspective: 1000px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-3d:nth-child(2) {
+    animation-delay: -2s;
+}
+
+.card-3d:nth-child(3) {
+    animation-delay: -4s;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    animation: rotate 8s infinite linear;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #e3b04b, #ff5c8d);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-back {
+    background: #ffffff;
+    transform: rotateY(180deg);
+    border: 2px solid #e3b04b;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Category Tabs */
+.categories {
+    padding: 40px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: transparent;
+    border: 2px solid #e9ecef;
+    color: #666;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tab:hover, .tab.active {
+    background: linear-gradient(45deg, #e3b04b, #ff5c8d);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(227, 176, 75, 0.3);
+}
+
+/* Template Grid */
+.template-grid {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.template-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.template-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder-template {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #666;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.wedding::before {
+    content: "💍 Wedding Template";
+}
+
+.birthday::before {
+    content: "🎂 Birthday Template";
+}
+
+.anniversary::before {
+    content: "💕 Anniversary Template";
+}
+
+.festival::before {
+    content: "🎉 Festival Template";
+}
+
+/* Indian Wedding Templates */
+.wedding-traditional::before {
+    content: "🪔 Traditional Indian Wedding";
+}
+
+.wedding-modern::before {
+    content: "💫 Modern Indian Wedding";
+}
+
+.wedding-south::before {
+    content: "🌺 South Indian Wedding";
+}
+
+.wedding-punjabi::before {
+    content: "🪈 Punjabi Wedding";
+}
+
+.wedding-bengali::before {
+    content: "🪔 Bengali Wedding";
+}
+
+.wedding-marathi::before {
+    content: "🪔 Marathi Wedding";
+}
+
+.wedding-gujarati::before {
+    content: "🪔 Gujarati Wedding";
+}
+
+.wedding-rajasthani::before {
+    content: "🏰 Rajasthani Wedding";
+}
+
+/* Indian Birthday Templates */
+.birthday-traditional::before {
+    content: "🎂 Traditional Indian Birthday";
+}
+
+.birthday-modern::before {
+    content: "🎈 Modern Indian Birthday";
+}
+
+.birthday-kids::before {
+    content: "🎉 Kids Birthday Indian";
+}
+
+.birthday-adult::before {
+    content: "🥂 Adult Birthday Indian";
+}
+
+.birthday-60th::before {
+    content: "👴 60th Birthday Indian";
+}
+
+.birthday-50th::before {
+    content: "🥇 50th Birthday Indian";
+}
+
+.birthday-25th::before {
+    content: "🥈 25th Birthday Indian";
+}
+
+.birthday-18th::before {
+    content: "🎓 18th Birthday Indian";
+}
+
+/* Indian Anniversary Templates */
+.anniversary-traditional::before {
+    content: "💕 Traditional Indian Anniversary";
+}
+
+.anniversary-modern::before {
+    content: "💫 Modern Indian Anniversary";
+}
+
+.anniversary-1st::before {
+    content: "📄 1st Anniversary Indian";
+}
+
+.anniversary-5th::before {
+    content: "🌳 5th Anniversary Indian";
+}
+
+.anniversary-10th::before {
+    content: "🥫 10th Anniversary Indian";
+}
+
+.anniversary-25th::before {
+    content: "🥈 25th Anniversary Indian";
+}
+
+.anniversary-50th::before {
+    content: "🥇 50th Anniversary Indian";
+}
+
+.anniversary-60th::before {
+    content: "💎 60th Anniversary Indian";
+}
+
+/* Indian Festival Templates */
+.festival-diwali::before {
+    content: "🪔 Diwali Celebration";
+}
+
+.festival-holi::before {
+    content: "🎨 Holi Celebration";
+}
+
+.festival-dussehra::before {
+    content: "⚔️ Dussehra Celebration";
+}
+
+.festival-durga-puja::before {
+    content: "🪔 Durga Puja Celebration";
+}
+
+.festival-rakshabandhan::before {
+    content: "🪢 Rakshabandhan Celebration";
+}
+
+.festival-ganesh-chaturthi::before {
+    content: "🐘 Ganesh Chaturthi Celebration";
+}
+
+.festival-navratri::before {
+    content: "🕺 Navratri Celebration";
+}
+
+.festival-eid::before {
+    content: "🌙 Eid Celebration";
+}
+
+/* Indian Baby Shower Templates */
+.baby-shower-traditional::before {
+    content: "🪔 Traditional Indian Baby Shower";
+}
+
+.baby-shower-modern::before {
+    content: "💫 Modern Indian Baby Shower";
+}
+
+.baby-shower-boy::before {
+    content: "👶 Baby Boy Shower Indian";
+}
+
+.baby-shower-girl::before {
+    content: "👶 Baby Girl Shower Indian";
+}
+
+.baby-shower-twin::before {
+    content: "👶👶 Twin Baby Shower Indian";
+}
+
+.baby-shower-naming::before {
+    content: "📝 Naming Ceremony Indian";
+}
+
+.baby-shower-annaprasan::before {
+    content: "🍚 Annaprasan Ceremony Indian";
+}
+
+.baby-shower-baby-wear::before {
+    content: "👗 Baby Wear Ceremony Indian";
+}
+
+/* Indian Business Event Templates */
+.business-event-corporate::before {
+    content: "🏢 Corporate Event Indian";
+}
+
+.business-event-seminar::before {
+    content: "📚 Seminar Invitation Indian";
+}
+
+.business-event-conference::before {
+    content: "🎤 Conference Invitation Indian";
+}
+
+.business-event-product-launch::before {
+    content: "🚀 Product Launch Indian";
+}
+
+.business-event-awards::before {
+    content: "🏆 Awards Ceremony Indian";
+}
+
+.business-event-networking::before {
+    content: "🤝 Networking Event Indian";
+}
+
+.business-event-workshop::before {
+    content: "🛠️ Workshop Invitation Indian";
+}
+
+.business-event-exhibition::before {
+    content: "🎪 Exhibition Invitation Indian";
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.template-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.edit-btn, .preview-btn {
+    background: #ffffff;
+    border: none;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background: linear-gradient(45deg, #e3b04b, #ff5c8d);
+    color: #ffffff;
+}
+
+.edit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(227, 176, 75, 0.4);
+}
+
+.preview-btn:hover {
+    background: #f8f9fa;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.card-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+    background: #333333;
+    color: #ffffff;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e3b04b;
+}
+
+.footer-ads {
+    flex: 1;
+    max-width: 728px;
+}
+
+.ad-placeholder {
+    text-align: center;
+    background: #444444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.ad-placeholder p {
+    color: #cccccc;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.ad-space {
+    background: #555555;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    color: #cccccc;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.modal-preview {
+    padding: 2rem;
+}
+
+.modal-card {
+    background: linear-gradient(135deg, #e3b04b, #ff5c8d);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal-card-front {
+    text-align: center;
+    color: white;
+}
+
+.modal-card-front h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.modal-card-front p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.modal-card-details p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-actions .btn-primary,
+.modal-actions .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-actions .btn-primary {
+    background: #e3b04b;
+    color: white;
+}
+
+.modal-actions .btn-primary:hover {
+    background: #d4a03f;
+    transform: translateY(-2px);
+}
+
+.modal-actions .btn-secondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.modal-actions .btn-secondary:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+
+    .modal-preview {
+        padding: 1rem;
+    }
+
+    .modal-card {
+        padding: 1.5rem;
+    }
+
+    .modal-card-front h2 {
+        font-size: 2rem;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-actions .btn-primary,
+    .modal-actions .btn-secondary {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-search {
+        margin: 0;
+        max-width: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .floating-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-3d {
+        width: 150px;
+        height: 210px;
+    }
+
+    .tabs {
+        gap: 10px;
+    }
+
+    .tab {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .ad-space {
+        height: 60px;
+    }
+}

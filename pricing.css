@@ -1,0 +1,472 @@
+Design a modern and minimal user dashboard UI for a web app called CardCraft, where users manage their saved invitation cards and projects.
+
+Layout:
+
+Top Navigation Bar: logo (CardCraft), search bar (Search my cards…), and profile dropdown (Settings, Logout).
+
+Left Sidebar:
+
+Menu: Dashboard, My Designs, Templates, Subscriptions, Support.
+
+Compact icons with smooth hover animations.
+
+Main Content Area:
+
+Header: “My Designs 🎨”
+
+Grid view showing saved card thumbnails with card name, edit date, and action buttons — Edit, Download, Delete.
+
+Option to create new card (+ New Design) at the top right.
+
+Empty state (if no designs):
+
+Illustration + text “No designs yet — start creating your first card!” and a Create Card button.
+
+Footer: AdSense banner space and app version.
+
+Theme:
+
+Background: light gray with white cards
+
+Accent: pastel pink + soft gold (#ff89a0, #f9d57b)
+
+Subtle shadows and rounded corners
+
+Font: Poppins / Inter — medium weight
+
+Animations:
+
+Hover glow on cards
+
+Fade-in grid items on load
+
+Slide-in sidebar
+
+Goal: clean, user-friendly workspace with focus on saved creations and easy re-editing./* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #fff9e6 50%, #ffd700 100%);
+    color: #333333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 80px 0 60px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ffb6c1, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pricing Cards */
+.pricing-cards {
+    padding: 60px 0;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.pricing-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fff9e6 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #ffb6c1, #ffd700);
+}
+
+.active-plan {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffd700;
+}
+
+.pro-card {
+    border: 2px solid #ffd700;
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.pro-card::before {
+    background: linear-gradient(45deg, #ffd700, #ffb6c1);
+    height: 6px;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #ffd700, #ffb6c1);
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.card-header {
+    margin-bottom: 30px;
+}
+
+.card-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 5px;
+}
+
+.period {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #ffb6c1;
+    color: #ffb6c1;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background: #ffb6c1;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ffb6c1, #ffd700);
+    border: none;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes glow {
+    from { box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2); }
+    to { box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Comparison Table */
+.comparison {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.comparison h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.comparison-table th {
+    background: linear-gradient(45deg, #ffb6c1, #ffd700);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.comparison-table tbody tr:hover {
+    background: rgba(255, 182, 193, 0.1);
+}
+
+/* FAQ Section */
+.faq {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.faq-item {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.faq-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #333333;
+    color: #ffffff;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffb6c1;
+}
+
+.footer-ads {
+    flex: 1;
+    max-width: 728px;
+}
+
+.ad-placeholder {
+    text-align: center;
+    background: #444444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.ad-placeholder p {
+    color: #cccccc;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.ad-space {
+    background: #555555;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    color: #cccccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+
+    .comparison-table th, .comparison-table td {
+        padding: 15px 10px;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .ad-space {
+        height: 60px;
+    }
+}

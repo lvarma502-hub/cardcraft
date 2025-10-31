@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardCraft - Pricing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="pricing.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <h1>CardCraft</h1>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="templates.html" class="nav-link">Templates</a>
+                <a href="editor.html" class="nav-link">Editor</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="pricing.html" class="nav-link active">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+            </nav>
+            <div class="header-buttons">
+                <a href="login.html" class="btn-outline">Login</a>
+                <a href="landing.html" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Choose Your Plan</h1>
+            <p>Create beautiful invitation cards — free or premium, your choice!</p>
+        </div>
+    </header>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-cards">
+        <div class="container">
+            <div class="cards-grid">
+                <!-- Free Plan -->
+                <div class="pricing-card" data-plan="Free">
+                    <div class="card-header">
+                        <h2>Free Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">0</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li>Access to basic templates</li>
+                        <li>Watermark on export</li>
+                        <li>Standard resolution</li>
+                        <li>Limited customizations</li>
+                    </ul>
+                    <button class="btn-secondary plan-btn" data-plan="Free">Get Started</button>
+                </div>
+
+                <!-- Pro Plan (Highlighted) -->
+                <div class="pricing-card pro-card active-plan" data-plan="Pro">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-header">
+                        <h2>Pro Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">299</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li>Unlimited templates</li>
+                        <li>No watermark</li>
+                        <li>HD download</li>
+                        <li>AI text assist</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn-primary plan-btn" data-plan="Pro">Start Pro Trial</button>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="pricing-card" data-plan="Business">
+                    <div class="card-header">
+                        <h2>Business Plan</h2>
+                        <div class="price">
+                            <span class="currency">₹</span>
+                            <span class="amount">699</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li>Team access (up to 10 users)</li>
+                        <li>Custom branding</li>
+                        <li>Premium support</li>
+                        <li>Advanced analytics</li>
+                        <li>API access</li>
+                    </ul>
+                    <button class="btn-secondary plan-btn" data-plan="Business">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison">
+        <div class="container">
+            <h2>Compare Plans</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th>Free</th>
+                        <th>Pro</th>
+                        <th>Business</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Templates</td>
+                        <td>Basic</td>
+                        <td>Unlimited</td>
+                        <td>Unlimited + Custom</td>
+                    </tr>
+                    <tr>
+                        <td>Watermark</td>
+                        <td>✓</td>
+                        <td>✗</td>
+                        <td>✗</td>
+                    </tr>
+                    <tr>
+                        <td>HD Export</td>
+                        <td>✗</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>AI Text Assist</td>
+                        <td>✗</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Team Access</td>
+                        <td>✗</td>
+                        <td>✗</td>
+                        <td>✓ (10 users)</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Branding</td>
+                        <td>✗</td>
+                        <td>✗</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td>Email</td>
+                        <td>Priority</td>
+                        <td>Premium</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Can I cancel my subscription anytime?</h3>
+                    <p>Yes, you can cancel your subscription at any time. You'll continue to have access until the end of your billing period.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are there any hidden fees?</h3>
+                    <p>No hidden fees. All prices are transparent and include all features mentioned in the plan.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I upgrade or downgrade my plan?</h3>
+                    <p>Absolutely! You can change your plan at any time from your account settings.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer refunds?</h3>
+                    <p>We offer a 30-day money-back guarantee for all paid plans if you're not satisfied.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How many templates can I access?</h3>
+                    <p>Free plan: 50+ basic templates. Pro/Business: Unlimited access to all templates.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a free trial for Pro plan?</h3>
+                    <p>Yes! Start your 14-day free trial of the Pro plan with no credit card required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#contact">Contact</a>
+                    <a href="#terms">Terms</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#help">Help</a>
+                </div>
+                <div class="footer-ads">
+                    <div class="ad-placeholder">
+                        <p>Advertisement</p>
+                        <div class="ad-space">728x90 Banner Ad</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CardCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Plan selection functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const planButtons = document.querySelectorAll('.plan-btn');
+
+            planButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const plan = this.getAttribute('data-plan');
+
+                    // Save to localStorage
+                    localStorage.setItem('activePlan', plan);
+
+                    // Show alert
+                    alert(`You have selected the ${plan} plan!`);
+
+                    // Redirect to dashboard
+                    window.location.href = 'dashboard.html';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
